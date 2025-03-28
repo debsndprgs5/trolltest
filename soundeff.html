@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bouton Son</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        #bouton {
+            width: 100%;
+            height: 100%;
+            background-color: #FF5722;
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+        }
+        #bouton:active {
+            background-color: #E64A19;
+        }
+    </style>
+</head>
+<body>
+    <button id="bouton">CLIQUE MOI POUR UN SON !</button>
+
+    <audio id="son" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+    <!-- Remplace par ton propre fichier son si besoin -->
+
+    <script>
+        const bouton = document.getElementById("bouton");
+        const son = document.getElementById("son");
+
+        bouton.addEventListener("click", () => {
+            son.play().catch(e => alert("Le son n'a pas pu être joué : " + e));
+        });
+    </script>
+</body>
+</html>
